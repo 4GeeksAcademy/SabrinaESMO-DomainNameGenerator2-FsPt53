@@ -19,7 +19,7 @@ window.onload = function() {
     "pequeños",
     "diminutos",
     "preciosos",
-    "horribles",
+    "fantasticos",
     "divertidos",
     "modernos"
   ];
