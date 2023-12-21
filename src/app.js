@@ -6,44 +6,21 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  let verb = [
-    "tenemos",
-    "creamos",
-    "diseñamos",
-    "montamos",
-    "pintamos",
-    "encontramos"
-  ];
-  let adjective = [
-    "grandes",
-    "pequeños",
-    "diminutos",
-    "preciosos",
-    "fantasticos",
-    "divertidos",
-    "modernos"
-  ];
-  let noun = [
-    "libros",
-    "muebles",
-    "marcos",
-    "peluches",
-    "juguetes",
-    "cuadros",
-    "ordenadores"
-  ];
+  let verb = ["tenemos", "creamos", "diseñamos", "pintamos"];
+  let adjective = ["diminutos", "preciosos", "fantasticos", "divertidos"];
+  let noun = ["libros", "peluches", "cuadros", "ordenadores"];
+  let TLD = [".com", ".net", ".org", ".info"];
 
-  let TLD = [".com", ".es", ".cat", ".net", ".org", ".tv", ".info"];
+  let domainName = "";
 
-  function randomArray(array) {
-    return array[Math.floor(Math.random() * array.length)];
+  for (let v = 0; v < verb.length; v++) {
+    for (let a = 0; a < adjective.length; a++) {
+      for (let n = 0; n < noun.length; n++) {
+        for (let t = 0; t < TLD.length; t++) {
+          domainName += verb[v] + adjective[a] + noun[n] + TLD[t] + "<br>";
+        }
+      }
+    }
   }
-
-  const domainName =
-    randomArray(verb) +
-    randomArray(adjective) +
-    randomArray(noun) +
-    randomArray(TLD);
-
   document.querySelector("#domainNameGenerator").innerHTML = domainName;
 };
